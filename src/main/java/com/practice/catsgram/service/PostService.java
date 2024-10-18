@@ -30,4 +30,19 @@ public class PostService {
         return post;
     }
 
+    public Post findById(int postId){
+        for(Post post:posts){
+            if(post.getId()==postId){
+                return post;
+            }
+        }
+        return null;
+
+    }
+    public List<Post> search(String author){
+        return posts.stream()
+                .filter(post -> post.getAuthor().equals(author))
+                .toList();
+    }
+
 }

@@ -47,6 +47,13 @@ public class UserService {
         return null;
     }
 
+    public User findByEmail(String userEmail){
+        if(users.containsKey(userEmail)){
+            return users.get(userEmail);
+        }
+        return null;
+    }
+
 
     public User update( User user) {
         if (user.getEmail() == null || user.getEmail().isBlank()) {

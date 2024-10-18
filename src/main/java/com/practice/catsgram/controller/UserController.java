@@ -38,4 +38,9 @@ public class UserController {
        userService.update(user);
         return user;
     }
+
+    @GetMapping("users/userEmail")
+    public User findByEmail(@PathVariable String userEmail){
+       return userService.findByEmail(userEmail);
+    }
 }
